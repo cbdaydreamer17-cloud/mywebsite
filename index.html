@@ -5,22 +5,46 @@
 
 <style>
 body {
+  margin: 0;
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ffd6e8, #d9f7ff, #fff0b3);
+  font-family: "Georgia", serif;
+  background: linear-gradient(135deg, #0f4c81, #dbe9f4, #8fb8d8);
   min-height: 100vh;
-  padding: 30px;
-  overflow: hidden;
+  overflow-x: hidden;
+  padding-top: 30px;
+  color: #333;
+}
+
+.card {
+  background: rgba(255,255,255,0.85);
+  width: 85%;
+  max-width: 500px;
+  margin: auto;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+  animation: appear 2s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
-  color: #ff4d88;
-  font-size: 40px;
+  color: #0f4c81;
+  font-size: 38px;
 }
 
 p {
   font-size: 20px;
-  color: #444;
+  line-height: 1.6;
 }
 
 img {
@@ -28,28 +52,28 @@ img {
   height: 250px;
   object-fit: cover;
   border-radius: 50%;
-  margin: 20px;
-  border: 5px solid white;
+  border: 8px solid #dbe9f4;
+  box-shadow: 0 0 25px #0f4c81;
 }
 
 .balloon {
   position: fixed;
-  font-size: 60px;
-  animation: float 6s infinite linear;
+  font-size: 55px;
+  animation: float 7s infinite linear;
 }
 
-.balloon1 {
+.b1 {
   left: 10%;
   animation-duration: 6s;
 }
 
-.balloon2 {
-  left: 45%;
+.b2 {
+  left: 50%;
   animation-duration: 8s;
 }
 
-.balloon3 {
-  left: 80%;
+.b3 {
+  left: 85%;
   animation-duration: 5s;
 }
 
@@ -61,15 +85,42 @@ img {
     transform: translateY(-120vh);
   }
 }
-</style>
 
+.confetti {
+  position: fixed;
+  top: -20px;
+  font-size: 25px;
+  animation: fall 5s infinite linear;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+
+.signature {
+  color: #0f4c81;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="balloon balloon1">🎈</div>
-<div class="balloon balloon2">🎈</div>
-<div class="balloon balloon3">🎈</div>
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+
+<div class="confetti" style="left:20%;">✨</div>
+<div class="confetti" style="left:40%; animation-delay:2s;">🎊</div>
+<div class="confetti" style="left:70%; animation-delay:1s;">✨</div>
+<div class="confetti" style="left:90%; animation-delay:3s;">🎉</div>
+
+
+<div class="card">
 
 <img src="IMG_20260716_213433_479.jpg">
 
@@ -81,23 +132,25 @@ Enkuan teweledk! 🥳
 </p>
 
 <p>
-Wishing you the happiest birthday ever, goytaye! 🎊🎉
+Wishing you the happiest birthday ever, goytaye! 🎊
 </p>
 
 <p>
-Thank you for being such an amazing friend.lene bzu chocolate mtgezalgn amet yargln😁.<br>
-I hope this year brings you endless happiness, success, laughter, and unforgettable memories together . ✨
+Thank you for being such an amazing friend.lene bzu chocolate mtgezalgn amet yargln😁..<br>
+May this year bring you endless happiness, success, laughter and unforgettable memories together . ✨
 </p>
 
 <p>
 Stay awesome, keep smiling, and never change.<br>
-You're one of a kind! 😄🎁💖
+You're one of a kind! 😄💙
 </p>
 
-<p style="font-size:22px; color:#ff4d88;">
+<p class="signature">
 With love,<br>
-💙 From Bettisha 💙
+💙 From Bettisha 😁💙
 </p>
+
+</div>
 
 </body>
 </html>
