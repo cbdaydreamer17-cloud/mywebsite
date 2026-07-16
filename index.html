@@ -39,11 +39,12 @@ body {
 
 
 button {
-  padding:15px 35px;
+  padding:15px 30px;
   margin:15px;
   border:none;
   border-radius:30px;
   font-size:20px;
+  cursor:pointer;
 }
 
 
@@ -95,9 +96,9 @@ img {
 
 
 h1 {
-  color:gold;
+  color:black;
   font-size:40px;
-  text-shadow:0 0 15px orange;
+  text-shadow:none;
 }
 
 
@@ -105,15 +106,14 @@ p {
   font-size:20px;
   line-height:1.5;
 }
-  
-</style>
+  </style>
 
 </head>
 
 <body>
 
 
-<!-- Countdown screen -->
+<!-- Countdown -->
 <div id="countdown">
 A special surprise is waiting for you... 🎁
 <br><br>
@@ -121,7 +121,9 @@ A special surprise is waiting for you... 🎁
 </div>
 
 
-<!-- Birthday question -->
+
+<!-- Birthday Question -->
+
 <div id="question">
 
 <h1>🎂 Is it Abelaye's Birthday?</h1>
@@ -133,17 +135,25 @@ A special surprise is waiting for you... 🎁
 </div>
 
 
-<!-- Balloons -->
-<div id="balloons">
-</div>
 
 
-<!-- Money rain -->
+<!-- Moving balloons -->
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+
+
+
+
+<!-- Falling money -->
+
 <div class="money" style="left:10%;">💵</div>
-<div class="money" style="left:30%; animation-delay:1s;">💰</div>
-<div class="money" style="left:50%; animation-delay:2s;">💵</div>
-<div class="money" style="left:70%; animation-delay:3s;">💰</div>
-<div class="money" style="left:90%; animation-delay:1.5s;">💵</div>
+<div class="money" style="left:30%;animation-delay:1s;">💰</div>
+<div class="money" style="left:50%;animation-delay:2s;">💵</div>
+<div class="money" style="left:70%;animation-delay:3s;">💰</div>
+<div class="money" style="left:90%;animation-delay:1.5s;">💵</div>
+
 
 
 
@@ -153,7 +163,10 @@ A special surprise is waiting for you... 🎁
 
 <img src="IMG_20260716_213433_479.jpg">
 
-<h1>🎉 Happy Birthday, Abelaye! 🎂❤️</h1>
+
+<h1>
+🎉 Happy Birthday, Abelaye! 🎂❤️
+</h1>
 
 
 <p>
@@ -169,7 +182,7 @@ Wishing you the happiest birthday ever, goytaye! 🎊🎉
 
 <p>
 Thank you for being such an amazing friend.<br>
-May this year bring you happiness, success, laughter and unforgettable memories. ✨
+May this year bring you endless happiness, success, laughter and unforgettable memories. ✨
 </p>
 
 
@@ -179,8 +192,22 @@ You're one of a kind! 😄💙
 </p>
 
 
+
 <p>
 💙 From Bettisha 💙
+</p>
+
+
+
+<button onclick="showSecret()">
+💌 Open Secret Message
+</button>
+
+
+<p id="secret" style="display:none;color:#0f4c81;">
+You are a truly special friend 💙<br>
+May your life be filled with happiness, success and beautiful memories.<br>
+Never stop smiling 😊✨
 </p>
 
 
@@ -223,9 +250,9 @@ document.getElementById("question").style.display="none";
 
 // Balloon explosion
 
-for(let i=0; i<20; i++){
+for(let i=0; i<25; i++){
 
-let balloon = document.createElement("div");
+let balloon=document.createElement("div");
 
 balloon.innerHTML="🎈";
 
@@ -235,23 +262,22 @@ balloon.style.left="50%";
 
 balloon.style.top="50%";
 
-balloon.style.fontSize="40px";
-
-balloon.style.animation="explode 2s forwards";
+balloon.style.fontSize="45px";
 
 balloon.style.setProperty("--x",
-(Math.random()*400-200)+"px");
+(Math.random()*500-250)+"px");
 
 balloon.style.setProperty("--y",
-(Math.random()*400-200)+"px");
+(Math.random()*500-250)+"px");
 
+balloon.style.animation="explode 2s forwards";
 
 document.body.appendChild(balloon);
 
 }
 
 
-// Show birthday card
+// Show card after explosion
 
 setTimeout(function(){
 
@@ -261,14 +287,77 @@ document.getElementById("card").style.display="block";
 
 }
 
+
+
+
+// Secret message
+
+function showSecret(){
+
+document.getElementById("secret").style.display="block";
+
+}
+
+
 </script>
+
 
 
 <style>
 
+
+/* Floating balloons */
+
+.balloon {
+
+position:fixed;
+
+font-size:60px;
+
+animation:float 7s infinite linear;
+
+}
+
+
+.b1 {
+left:10%;
+animation-duration:6s;
+}
+
+
+.b2 {
+left:50%;
+animation-duration:8s;
+}
+
+
+.b3 {
+left:85%;
+animation-duration:5s;
+}
+
+
+
+@keyframes float {
+
+from {
+transform:translateY(100vh);
+}
+
+to {
+transform:translateY(-120vh);
+}
+
+}
+
+
+
+
+/* Balloon explosion */
+
 @keyframes explode {
 
-from{
+from {
 
 transform:translate(0,0);
 
@@ -276,7 +365,7 @@ opacity:1;
 
 }
 
-to{
+to {
 
 transform:translate(var(--x),var(--y));
 
@@ -285,6 +374,8 @@ opacity:0;
 }
 
 }
+
+
 
 
 /* Money falling */
@@ -302,15 +393,16 @@ animation:fall 5s linear infinite;
 }
 
 
+
 @keyframes fall {
 
-from{
+from {
 
 transform:translateY(-50px) rotate(0deg);
 
 }
 
-to{
+to {
 
 transform:translateY(110vh) rotate(360deg);
 
@@ -319,33 +411,9 @@ transform:translateY(110vh) rotate(360deg);
 }
 
 
-/* Moving balloons */
-
-#balloons div {
-
-position:fixed;
-
-font-size:60px;
-
-animation:float 7s infinite;
-
-}
-
-
-@keyframes float {
-
-from{
-
-transform:translateY(100vh);
-
-}
-
-to{
-
-transform:translateY(-120vh);
-
-}
-
-}
-
 </style>
+
+
+</body>
+
+</html>
