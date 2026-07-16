@@ -7,8 +7,10 @@
 body {
   text-align: center;
   font-family: Arial, sans-serif;
-  background: #ffe6f2;
+  background: linear-gradient(135deg, #ffd6e8, #d9f7ff, #fff0b3);
+  min-height: 100vh;
   padding: 30px;
+  overflow: hidden;
 }
 
 h1 {
@@ -27,18 +29,47 @@ img {
   object-fit: cover;
   border-radius: 50%;
   margin: 20px;
+  border: 5px solid white;
 }
 
 .balloon {
-  font-size: 50px;
+  position: fixed;
+  font-size: 60px;
+  animation: float 6s infinite linear;
 }
-</style>
 
+.balloon1 {
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.balloon2 {
+  left: 45%;
+  animation-duration: 8s;
+}
+
+.balloon3 {
+  left: 80%;
+  animation-duration: 5s;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-120vh);
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="balloon">🎈🎈🎈</div>
+<div class="balloon balloon1">🎈</div>
+<div class="balloon balloon2">🎈</div>
+<div class="balloon balloon3">🎈</div>
 
 <img src="IMG_20260716_213433_479.jpg">
 
@@ -54,7 +85,7 @@ Wishing you the happiest birthday ever, goytaye! 🎊🎉
 </p>
 
 <p>
-Thank you for being such an amazing friend.lene bzu chocolate mtgezabet amet yargln😁😁
+Thank you for being such an amazing friend.lene bzuu chocolate mtgezabet amet yargln😁😁.<br>
 I hope this year brings you endless happiness, success, laughter, and unforgettable memories together . ✨
 </p>
 
@@ -62,8 +93,6 @@ I hope this year brings you endless happiness, success, laughter, and unforgetta
 Stay awesome, keep smiling, and never change.<br>
 You're one of a kind! 😄🎁💖
 </p>
-
-<div class="balloon">🎈✨🎈</div>
 
 </body>
 </html>
