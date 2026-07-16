@@ -1,127 +1,212 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>Abelaye Birthday 🎂</title>
 
 <style>
 
 body {
-margin:0;
-text-align:center;
-font-family:Georgia,serif;
-background:linear-gradient(135deg,#0f4c81,#dbe9f4,#8fb8d8);
-min-height:100vh;
-padding-top:50px;
-overflow:hidden;
+  margin:0;
+  text-align:center;
+  font-family:Georgia, serif;
+  background:linear-gradient(135deg,#0f4c81,#dbe9f4,#8fb8d8);
+  min-height:100vh;
+  padding-top:50px;
+  overflow:hidden;
 }
 
-
-#countdown {
-color:white;
-font-size:35px;
-margin-top:150px;
-}
-
-
+/* First question */
 #question {
-display:none;
-background:white;
-width:85%;
-max-width:420px;
-margin:auto;
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 25px gray;
+  background:white;
+  width:85%;
+  max-width:420px;
+  margin:auto;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 0 25px gray;
 }
-
 
 button {
-padding:15px 30px;
-margin:15px;
-border:none;
-border-radius:30px;
-font-size:20px;
-cursor:pointer;
+  padding:15px 35px;
+  margin:15px;
+  border:none;
+  border-radius:30px;
+  font-size:20px;
 }
-
 
 .yes {
-background:#0f4c81;
-color:white;
+  background:#0f4c81;
+  color:white;
 }
-
 
 .no {
-background:#ddd;
+  background:#ddd;
 }
 
 
+/* Birthday card */
 #card {
-display:none;
-background:white;
-width:85%;
-max-width:500px;
-margin:auto;
-padding:25px;
-border-radius:25px;
-box-shadow:0 0 25px gray;
-animation:appear 2s;
+  display:none;
+  background:white;
+  width:85%;
+  max-width:500px;
+  margin:auto;
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 0 25px gray;
+  animation:show 2s;
 }
 
-
-@keyframes appear {
-from {
-opacity:0;
-transform:scale(.5);
-}
-to {
-opacity:1;
-transform:scale(1);
-}
+@keyframes show {
+  from {opacity:0; transform:scale(.8);}
+  to {opacity:1; transform:scale(1);}
 }
 
 
 img {
-width:250px;
-height:250px;
-object-fit:cover;
-border-radius:50%;
-border:8px solid silver;
-box-shadow:0 0 25px #0f4c81;
+  width:250px;
+  height:250px;
+  object-fit:cover;
+  border-radius:50%;
+  border:8px solid #dbe9f4;
+  box-shadow:0 0 25px #0f4c81;
 }
-
 
 h1 {
-font-size:40px;
-color:gold;
-text-shadow:0 0 15px orange;
-animation:shine 2s infinite alternate;
+  color:#0f4c81;
 }
-
-
-@keyframes shine {
-from {
-text-shadow:0 0 5px gold;
-}
-to {
-text-shadow:0 0 25px orange;
-}
-}
-
 
 p {
-font-size:20px;
-line-height:1.5;
+  font-size:20px;
+  line-height:1.5;
 }
 
 
-#secret {
-display:none;
-margin-top:20px;
-font-size:20px;
-color:#0f4c81;
+/* Balloons */
+.balloon {
+  position:fixed;
+  font-size:60px;
+  animation:float 7s linear infinite;
 }
 
+.b1 {
+ left:10%;
+ animation-duration:6s;
+}
+
+.b2 {
+ left:50%;
+ animation-duration:8s;
+}
+
+.b3 {
+ left:85%;
+ animation-duration:5s;
+}
+
+@keyframes float {
+ from {transform:translateY(100vh);}
+ to {transform:translateY(-120vh);}
+}
+
+
+/* Falling money */
+.money {
+ position:fixed;
+ top:-50px;
+ font-size:35px;
+ animation:moneyFall 5s linear infinite;
+}
+
+@keyframes moneyFall {
+ from {
+  transform:translateY(-50px) rotate(0deg);
+ }
+ to {
+  transform:translateY(110vh) rotate(360deg);
+ }
+}
 
 </style>
+
+
+<script>
+function showCard(){
+ document.getElementById("question").style.display="none";
+ document.getElementById("card").style.display="block";
+}
+</script>
+
+</head>
+
+
+<body>
+
+
+<!-- Moving balloons -->
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+
+
+<!-- Falling money -->
+<div class="money" style="left:10%;">💵</div>
+<div class="money" style="left:30%;animation-delay:1s;">💰</div>
+<div class="money" style="left:50%;animation-delay:2s;">💵</div>
+<div class="money" style="left:70%;animation-delay:3s;">💰</div>
+<div class="money" style="left:90%;animation-delay:1.5s;">💵</div>
+
+
+
+<div id="question">
+
+<h1>🎂 Is it Abelaye's Birthday?</h1>
+
+<button class="yes" onclick="showCard()">YES 💙</button>
+
+<button class="no">NO 😄</button>
+
+</div>
+
+
+
+<div id="card">
+
+<img src="IMG_20260716_213433_479.jpg">
+
+<h1>🎉 Happy Birthday, Abelaye! 🎂❤️</h1>
+
+
+<p>
+Abelaye, the real one... yene tsede sew! 🌼❤️<br>
+Enkuan teweledk! 🥳
+</p>
+
+
+<p>
+Wishing you the happiest birthday ever, goytaye! 🎊🎉
+</p>
+
+
+<p>
+Thank you for being such an amazing friend.lene bzu chocolate mtgezalgn amet yargln.<br>
+May this year bring you endless happiness, success, laughter and unforgettable memories together. ✨
+</p>
+
+
+<p>
+Stay awesome, keep smiling, and never change.<br>
+You're one of a kind! 😄💙
+</p>
+
+
+<p>
+💙 From Bettisha 💙
+</p>
+
+
+</div>
+
+
+</body>
+</html>
