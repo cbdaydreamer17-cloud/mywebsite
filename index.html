@@ -1,126 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Happy Birthday Abelaye 🎂</title>
+<title>Abelaye Birthday 🎂</title>
 
 <style>
 body {
-  margin: 0;
-  text-align: center;
-  font-family: "Georgia", serif;
-  background: linear-gradient(135deg, #0f4c81, #dbe9f4, #8fb8d8);
-  min-height: 100vh;
-  overflow-x: hidden;
-  padding-top: 30px;
-  color: #333;
+  margin:0;
+  text-align:center;
+  font-family:Georgia, serif;
+  background:linear-gradient(135deg,#0f4c81,#dbe9f4,#8fb8d8);
+  min-height:100vh;
+  padding-top:80px;
 }
 
-.card {
-  background: rgba(255,255,255,0.85);
-  width: 85%;
-  max-width: 500px;
-  margin: auto;
-  padding: 25px;
-  border-radius: 25px;
-  box-shadow: 0 0 25px rgba(0,0,0,0.2);
-  animation: appear 2s ease;
+#question {
+  background:white;
+  width:80%;
+  max-width:400px;
+  margin:auto;
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 0 25px gray;
 }
 
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+button {
+  padding:15px 35px;
+  margin:15px;
+  border:none;
+  border-radius:30px;
+  font-size:20px;
+  cursor:pointer;
 }
 
-h1 {
-  color: #0f4c81;
-  font-size: 38px;
+.yes {
+  background:#0f4c81;
+  color:white;
 }
 
-p {
-  font-size: 20px;
-  line-height: 1.6;
+.no {
+  background:#ddd;
+}
+
+#card {
+  display:none;
+  background:white;
+  width:85%;
+  max-width:500px;
+  margin:auto;
+  padding:25px;
+  border-radius:25px;
+  box-shadow:0 0 25px gray;
 }
 
 img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 8px solid #dbe9f4;
-  box-shadow: 0 0 25px #0f4c81;
+  width:250px;
+  height:250px;
+  object-fit:cover;
+  border-radius:50%;
+  border:7px solid #dbe9f4;
 }
 
-.balloon {
-  position: fixed;
-  font-size: 55px;
-  animation: float 7s infinite linear;
+h1 {
+  color:#0f4c81;
 }
 
-.b1 {
-  left: 10%;
-  animation-duration: 6s;
-}
-
-.b2 {
-  left: 50%;
-  animation-duration: 8s;
-}
-
-.b3 {
-  left: 85%;
-  animation-duration: 5s;
-}
-
-@keyframes float {
-  from {
-    transform: translateY(100vh);
-  }
-  to {
-    transform: translateY(-120vh);
-  }
-}
-
-.confetti {
-  position: fixed;
-  top: -20px;
-  font-size: 25px;
-  animation: fall 5s infinite linear;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(110vh);
-  }
-}
-
-.signature {
-  color: #0f4c81;
-  font-size: 24px;
-  font-weight: bold;
+p {
+  font-size:20px;
+  line-height:1.5;
 }
 
 </style>
+
+<script>
+function showCard(){
+ document.getElementById("question").style.display="none";
+ document.getElementById("card").style.display="block";
+}
+</script>
+
 </head>
 
 <body>
 
-<div class="balloon b1">🎈</div>
-<div class="balloon b2">🎈</div>
-<div class="balloon b3">🎈</div>
+<div id="question">
 
-<div class="confetti" style="left:20%;">✨</div>
-<div class="confetti" style="left:40%; animation-delay:2s;">🎊</div>
-<div class="confetti" style="left:70%; animation-delay:1s;">✨</div>
-<div class="confetti" style="left:90%; animation-delay:3s;">🎉</div>
+<h1>🎂 Is it Abelaye's Birthday?</h1>
+
+<button class="yes" onclick="showCard()">YES 💙</button>
+
+<button class="no">NO 😄</button>
+
+</div>
 
 
-<div class="card">
+<div id="card">
 
 <img src="IMG_20260716_213433_479.jpg">
 
@@ -136,18 +109,17 @@ Wishing you the happiest birthday ever, goytaye! 🎊
 </p>
 
 <p>
-Thank you for being such an amazing friend.lene bzu chocolate mtgezalgn amet yargln😁..<br>
+Thank you for being such an amazing.lene bzu chocolate mtgezalgn amet yargln😁.
 May this year bring you endless happiness, success, laughter and unforgettable memories together . ✨
 </p>
 
 <p>
 Stay awesome, keep smiling, and never change.<br>
-You're one of a kind! 😄💙
+You're one of a mskin! 😄💙
 </p>
 
-<p class="signature">
-With love,<br>
-💙 From Bettisha 😁💙
+<p>
+💙 From Bettisha 💙
 </p>
 
 </div>
