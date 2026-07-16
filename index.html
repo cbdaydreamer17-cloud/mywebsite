@@ -25,7 +25,7 @@ body {
 }
 
 
-/* Birthday question */
+/* Birthday Question */
 #question {
   display:none;
   background:white;
@@ -59,7 +59,7 @@ button {
 }
 
 
-/* Birthday card */
+/* Birthday Card */
 #card {
   display:none;
   background:white;
@@ -74,14 +74,17 @@ button {
 
 
 @keyframes show {
-  from {
-    opacity:0;
-    transform:scale(.5);
-  }
-  to {
-    opacity:1;
-    transform:scale(1);
-  }
+
+from {
+ opacity:0;
+ transform:scale(.5);
+}
+
+to {
+ opacity:1;
+ transform:scale(1);
+}
+
 }
 
 
@@ -106,7 +109,7 @@ p {
   font-size:20px;
   line-height:1.5;
 }
-  </style>
+</style>
 
 </head>
 
@@ -114,45 +117,63 @@ p {
 
 
 <!-- Countdown -->
+
 <div id="countdown">
+
 A special surprise is waiting for you... 🎁
+
 <br><br>
+
 <span id="number">3</span>
+
 </div>
 
 
 
-<!-- Birthday Question -->
+<!-- Question -->
 
 <div id="question">
 
 <h1>🎂 Is it Abelaye's Birthday?</h1>
 
-<button class="yes" onclick="celebrate()">YES 💙</button>
 
-<button class="no">NO 😄</button>
+<button class="yes" onclick="celebrate()">
+YES 💙
+</button>
+
+
+<button class="no">
+NO 😄
+</button>
 
 </div>
 
 
 
 
-<!-- Moving balloons -->
+<!-- Floating balloons -->
 
 <div class="balloon b1">🎈</div>
+
 <div class="balloon b2">🎈</div>
+
 <div class="balloon b3">🎈</div>
 
 
 
 
-<!-- Falling money -->
+<!-- Money rain -->
 
 <div class="money" style="left:10%;">💵</div>
+
 <div class="money" style="left:30%;animation-delay:1s;">💰</div>
+
 <div class="money" style="left:50%;animation-delay:2s;">💵</div>
+
 <div class="money" style="left:70%;animation-delay:3s;">💰</div>
+
 <div class="money" style="left:90%;animation-delay:1.5s;">💵</div>
+
 
 
 
@@ -160,6 +181,7 @@ A special surprise is waiting for you... 🎁
 <!-- Birthday Card -->
 
 <div id="card">
+
 
 <img src="IMG_20260716_213433_479.jpg">
 
@@ -169,10 +191,12 @@ A special surprise is waiting for you... 🎁
 </h1>
 
 
+
 <p>
 Abelaye, the real one... yene tsede sew! 🌼❤️<br>
 Enkuan teweledk! 🥳
 </p>
+
 
 
 <p>
@@ -180,21 +204,25 @@ Wishing you the happiest birthday ever, goytaye! 🎊🎉
 </p>
 
 
+
 <p>
-Thank you for being such an amazing friend.<br>
-May this year bring you endless happiness, success, laughter and unforgettable memories. ✨
+Thank you for being such an amazing.<br>
+May this year bring you endless happiness, success, laughter and unforgettable memories together.✨
 </p>
+
 
 
 <p>
 Stay awesome, keep smiling, and never change.<br>
-You're one of a kind! 😄💙
+You're one of a mskin and anadaj! 😄💙
 </p>
 
 
 
-<p>
-💙 From Bettisha 💙
+
+<p></p>
+  with love
+❣️ From Bettisha ❣️
 </p>
 
 
@@ -204,15 +232,23 @@ You're one of a kind! 😄💙
 </button>
 
 
-<p id="secret" style="display:none;color:#0f4c81;">
-You are a truly special friend 💙<br>
-May your life be filled with happiness, success and beautiful memories.<br>
-Never stop smiling 😊✨
+
+<p id="secret" style="display:none;color:red;">
+
+😁 Yasebkew misakabet amet yargleh Abelaye,<br>
+
+yalkegn ye chocolate ena sprite fabrica mikefetbet amet yhunnn ✊🤣
+
+<br><br>
+
+🫵🫶❤️
+
 </p>
 
 
+
 </div>
-<script>
+  <script>
 
 
 // Countdown
@@ -241,7 +277,8 @@ document.getElementById("question").style.display="block";
 
 
 
-// YES button magic effect
+
+// YES button magic
 
 function celebrate(){
 
@@ -252,7 +289,7 @@ document.getElementById("question").style.display="none";
 
 for(let i=0; i<25; i++){
 
-let balloon=document.createElement("div");
+let balloon = document.createElement("div");
 
 balloon.innerHTML="🎈";
 
@@ -270,20 +307,24 @@ balloon.style.setProperty("--x",
 balloon.style.setProperty("--y",
 (Math.random()*500-250)+"px");
 
+
 balloon.style.animation="explode 2s forwards";
+
 
 document.body.appendChild(balloon);
 
 }
 
 
-// Show card after explosion
+
+// Show card
 
 setTimeout(function(){
 
 document.getElementById("card").style.display="block";
 
 },1500);
+
 
 }
 
@@ -300,6 +341,7 @@ document.getElementById("secret").style.display="block";
 
 
 </script>
+
 
 
 
@@ -365,6 +407,7 @@ opacity:1;
 
 }
 
+
 to {
 
 transform:translate(var(--x),var(--y));
@@ -374,6 +417,7 @@ opacity:0;
 }
 
 }
+
 
 
 
@@ -402,6 +446,7 @@ transform:translateY(-50px) rotate(0deg);
 
 }
 
+
 to {
 
 transform:translateY(110vh) rotate(360deg);
@@ -414,6 +459,8 @@ transform:translateY(110vh) rotate(360deg);
 </style>
 
 
+
 </body>
 
 </html>
+  
